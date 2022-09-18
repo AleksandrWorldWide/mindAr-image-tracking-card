@@ -1,7 +1,7 @@
 const THREE = window.MINDAR.IMAGE.THREE;
 import {loadAudio, loadGLTF} from './libs/loader.js';
 import {CSS3DObject} from './libs/CSS3DRenderer.js';
-import { EventDispatcher } from './libs/three.module.js';
+
 
 document.addEventListener('DOMContentLoaded', () => {
 	const start = async() => {
@@ -23,10 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	camera.add(listener);
 
 	// car model
+	const scaleCar = 0.07;
 	const car = await loadGLTF('./assets/model/car/scene.gltf');
 	car.scene.userData.clickable = true;
-	car.scene.scale.set(0.1,0.1,0.1);
-	car.scene.position.set(-0.3,-0.3,0);
+	car.scene.scale.set(scaleCar,scaleCar,scaleCar);
+	car.scene.position.set(-0.4,-0.25,0);
 	car.scene.rotation.set(0,45,-100);
 	anchor.group.add(car.scene);
 
@@ -40,11 +41,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	const ringtone = new THREE.Audio(listener);
 	ringtone.setBuffer(audioRingtone);
 
-	// mail model
+	//mail model
 	const mail = await loadGLTF('./assets/model/mail/scene.gltf');
 	mail.scene.userData.clickable = true;
 	mail.scene.scale.set(0.03,0.03,0.03);
-	mail.scene.position.set(0.3,-0.3,0);
+	mail.scene.position.set(0.1,-0.25,0);
 	mail.scene.rotation.set(0.3,-0.7,0);
 	anchor.group.add(mail.scene);
 
@@ -52,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const drone = await loadGLTF('./assets/model/drone/scene.gltf');
 	drone.scene.userData.clickable = true;
 	drone.scene.scale.set(0.0003,0.0003,0.0003);
-	drone.scene.position.set(0.15,-0.25,0);
+	drone.scene.position.set(-0.05,-0.2,0);
 	drone.scene.visible = false;
 	anchor.group.add(drone.scene);
 
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const phone = await loadGLTF('./assets/model/pnohe/scene.gltf');
 	phone.scene.userData.clickable = true;
 	phone.scene.scale.set(0.005,0.005,0.005);
-	phone.scene.position.set(0.5,-0.25,0);
+	phone.scene.position.set(0.32,-0.22,0);
 	phone.scene.rotation.set(0.3,-0.7,0);
 	anchor.group.add(phone.scene);
 
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const globus = await loadGLTF('./assets/model/globus/scene.gltf');
 	globus.scene.userData.clickable = true;
 	globus.scene.scale.set(0.0001,0.0001,0.0001);
-	globus.scene.position.set(0.1,-0.2,0);
+	globus.scene.position.set(-0.1,-0.2,0);
 	anchor.group.add(globus.scene);
 
 	/// globus animation

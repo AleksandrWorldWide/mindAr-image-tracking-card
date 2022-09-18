@@ -1,7 +1,7 @@
 #slider {
 	position: relative;
-	width: 100vh;
-	height: 50vw;
+	width: 80vh;
+	height: 30vw;
 	margin: 0 auto;
 	visibility: hidden;
 }
@@ -18,18 +18,18 @@
 
 .prev {
 	position: absolute;
-	width: 10vh;
-	height: 7vw;
+	width: 5vw;
+	height: 10vh;
 	top: 50%;
-	left: -70px;
+	left: -7vw;
 }
 
 .next {
 	position: absolute;
-	width: 10vh;
-	height: 7vw;
+	width: 5vw;
+	height: 10vh;
 	top: 50%;
 	transform: translateY(-50%);
-	right: -70px;
+	right: -7vw;
 	transform: scaleX(-1);
 }
